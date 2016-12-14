@@ -4,8 +4,6 @@ var Schema = mongoose.Schema
     bcrypt = require('bcrypt'),
     SALT_WORK_FACTOR = 10;
     
-    
-    
 var BookSchema = new Schema({
     book_title : { type: String, required: true, trim: true, unique: true, index: { unique: true }  },
     book_author : { type: String, required: true, trim: true },
@@ -96,8 +94,4 @@ UserSchema.statics.getAuthenticated = function(username, password, cb) {
     });
 };
 
- //module.exports = mongoose.model('Book', BookSchema);
  module.exports = mongoose.model('User', UserSchema);
-
-//var Book = mongoose.model('Book',BookSchema);
-//var User = mongoose.model('User',UserSchema);
