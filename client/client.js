@@ -176,7 +176,7 @@ myApp.controller('mainController', function($scope, $http, $window) {
     
     //UPDATE
     $scope.addBook = function(userName, bookTitle, bookAuthor, bookYear, bookUrl) {
-        $http.get("/books/" + userName + "/add/" + bookTitle + "/" + bookAuthor + "/" + bookYear + "/" + bookUrl)
+        $http.get("/books/" + userName + "/add/" + bookTitle + "/" + bookAuthor + "/" + bookYear)
             .then(function(response) {
                 if (response.data == 'true') {
                     console.log(response.data + 'BOOK WAS ADDED.');
