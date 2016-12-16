@@ -10,3 +10,8 @@ body{
 [ng\:cloak], [ng-cloak], .ng-cloak {
   display: none !important;
 }
+
+.fa-thumb-tack{
+  color: #d90000;
+  
+}
