@@ -49,24 +49,22 @@ myApp.controller('mainController', function($scope, $http, $window) {
                 console.log("Your New Image: " +  $scope.imgUrl + " was added.");
             });
     };
-
-    $scope.newPoll = function(pollName, items) {
-        // polls/post/:user/:title/:list
-
-        $scope.pollName = pollName;
-        $scope.items = items;
-        $scope.string_API = "/polls/post/" + $scope.pollName + "/" + $scope.items;
-        console.log("LOG New Poll: " + $scope.string_API);
-
+    
+    $scope.getMyPins = function (userName){
+        $scope.user_name="u1" ; //userName;
+        $scope.string_API = "/getMyPins/" +  $scope.user_name;  
+        console.log("Requesting all my Pins:  " + $scope.string_API);
         $http.get($scope.string_API)
             .then(function(response) {
-                $scope.getAll();
-                $scope.alertVoted = "Your New Poll: " + $scope.pollName + " was added.";
+                console.log("Response received: "+ response.data); 
+                if(response.data != null){
+                    $scope.myPins=response.data;
+                    console.log(" My Pins List: " + JSON.stringify(response.data.user_pins));
+                }
             });
-
-        $scope.pollName = "";
-        $scope.items = "";
     };
+
+  
     $scope.removePoll = function(pollName) {
         $scope.pollName = pollName;
         $scope.string_API = "/polls/remove/" + $scope.pollName;
