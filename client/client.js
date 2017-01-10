@@ -14,7 +14,7 @@ myApp.controller('mainController', function($scope, $http, $window) {
 
 
     $scope.login = function(userName, userPwd) {
-        $http.get("/login/" + userName + "/" + userPwd)
+        $http.get("/login/" + userName)
             .then(function(response) {
                 if (response.data == 'true') {
                     userName = userName;
@@ -37,9 +37,18 @@ myApp.controller('mainController', function($scope, $http, $window) {
                 $scope.userName = null;
                 $window.location.href = '/';
                 console.log(' Username after logout: ' + $scope.userName);
-
-            });
+        });
     }
+    
+    $scope.addImage = function (userName,imgUrl){
+        $scope.user_name=userName;
+        $scope.string_API = "/img/post/" +  $scope.user_name + "/" + encodeURIComponent(imgUrl);  
+        console.log("LOG New IMG Added: " + $scope.string_API);
+        $http.get($scope.string_API)
+            .then(function(response) {
+                console.log("Your New Image: " +  $scope.imgUrl + " was added.");
+            });
+    };
 
     $scope.newPoll = function(pollName, items) {
         // polls/post/:user/:title/:list

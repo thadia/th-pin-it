@@ -1,3 +1,21 @@
+sudo mongo ds141098.mlab.com:41098/th-pins -u dbuser -p password
+
+curl -get http://localhost:8080/img/post/u1/"https://lh4.ggpht.com/mJDgTDUOtIyHcrb69WM0cpaxFwCNW6f0VQ2ExA7dMKpMDrZ0A6ta64OCX3H-NMdRd20=w300"          
+
+curl -get http://localhost:8080/img/post/u1/https%3A%2F%2Flh4.ggpht.com%2FmJDgTDUOtIyHcrb69WM0cpaxFwCNW6f0VQ2ExA7dMKpMDrZ0A6ta64OCX3H-NMdRd20%3Dw300
+
+
+
+
+
+
+
+
+
+
+
+
+
 {
     "user_name": "jmar777",
     "user_password": "Password",
