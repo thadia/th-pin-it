@@ -2,10 +2,10 @@ body{
    font-family: verdana;
 }
 
-/* 
-  Allow angular.js to be loaded in body, hiding cloaked elements until 
-  templates compile.  The !important is important given that there may be 
-  other selectors that are more specific or come later and might alter display.  
+/*
+  Allow angular.js to be loaded in body, hiding cloaked elements until
+  templates compile.  The !important is important given that there may be
+  other selectors that are more specific or come later and might alter display.
  */
 [ng\:cloak], [ng-cloak], .ng-cloak {
   display: none !important;
@@ -13,11 +13,21 @@ body{
 
 .fa-thumb-tack{
   color: #d90000;
-  
+
 }
 
 .text-in{
   color: grey;
   font-family: Trebuchet MS;
-  
+
+}
+
+.fa-times-circle{
+  color: black;
+
+}
+
+.fa-plus-circle{
+  color: #00bf60;
+
 }
