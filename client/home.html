@@ -42,7 +42,7 @@
 
     </nav>
 
-    <div class="container">
+    <div class="container-fluid">
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#home" ng-click="getMyPins(userName)">My Pins</a></li>
             <li><a data-toggle="tab" href="#myInfo" ng-click="getMyInfo(userName)">Add Image</a></li>
@@ -59,7 +59,7 @@
                         <!-- [{{$index + 1}}] -->
                         <!--     <img src="..." alt="...">-->
                         <div class="list_pins" ng-repeat="pin in myPins track by $index">
-                            <div class="col-lg-4 col-sm-6 col-xs-12">
+                            <div class="col-xs-6 col-md-3">
                 
                                 <div class="thumbnail">
                                     <div class="caption">
