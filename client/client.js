@@ -72,7 +72,7 @@ myApp.controller('mainController', function($scope, $http, $window) {
     };
     
     $scope.getMyPins = function (userName){
-        $scope.user_name=userName;
+        $scope.user_name="maat_shu"; //userName;
         $scope.string_API = "/getMyPins/" +  $scope.user_name;  
         console.log("Requesting all my Pins:  " + $scope.string_API);
         $http.get($scope.string_API)
