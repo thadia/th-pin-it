@@ -41,7 +41,7 @@ myApp.controller('mainController', function($scope, $http, $window) {
     }
     
     $scope.addImage = function (userName,imgUrl){
-        $scope.user_name=userName;
+        $scope.user_name="u2"; // userName;
         $scope.string_API = "/img/post/" +  $scope.user_name + "/" + encodeURIComponent(imgUrl);  
         console.log("LOG New IMG Added: " + $scope.string_API);
         $http.get($scope.string_API)
@@ -51,14 +51,14 @@ myApp.controller('mainController', function($scope, $http, $window) {
     };
     
     $scope.getMyPins = function (userName){
-        $scope.user_name="u1" ; //userName;
+        $scope.user_name="u2" ; //userName;
         $scope.string_API = "/getMyPins/" +  $scope.user_name;  
         console.log("Requesting all my Pins:  " + $scope.string_API);
         $http.get($scope.string_API)
             .then(function(response) {
                 console.log("Response received: "+ response.data); 
                 if(response.data != null){
-                    $scope.myPins=response.data;
+                    $scope.myPins=response.data.user_pins;
                     console.log(" My Pins List: " + JSON.stringify(response.data.user_pins));
                 }
             });

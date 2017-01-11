@@ -31,3 +31,7 @@ body{
   color: #00bf60;
 
 }
+#delete_img_button{
+  right: 0;
+  position: relative;
+}
