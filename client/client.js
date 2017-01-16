@@ -9,16 +9,18 @@ myApp.controller('mainController', function($scope, $http, $window) {
                 $scope.userName = response.data;
                 console.log(response.data + ' Get My Username ' + $scope.userName);
                 
-                $scope.string_API = "/getMyPins/" +  $scope.userName;  
-                console.log("Requesting all my Pins:  " + $scope.string_API);
-                $http.get($scope.string_API)
-                    .then(function(response) {
-                console.log("Response received: "+ response.data); 
-                if(response.data != null){
-                    $scope.myPins=response.data.user_pins;
-                    console.log(" My Pins List: " + JSON.stringify(response.data.user_pins));
-                }
-                 });    
+                if(response.data != ""){
+                    $scope.string_API = "/getMyPins/" +  $scope.userName;  
+                    console.log("Requesting all my Pins:  " + $scope.string_API);
+                    $http.get($scope.string_API)
+                        .then(function(response) {
+                    console.log("Response received: "+ response.data); 
+                    if(response.data != null){
+                        $scope.myPins=response.data.user_pins;
+                        console.log(" My Pins List: " + JSON.stringify(response.data.user_pins));
+                    }
+                     });   
+                } 
                 
             }
         });
