@@ -46,13 +46,23 @@ myApp.controller('mainController', function($scope, $http, $window) {
             });
     };
     
-    $scope.removeImage = function (userName,imgUrl){
+    $scope.removeImage = function (userName,imgUrl){ 
         $scope.user_name= userName;
         $scope.string_API = "/img/" +  $scope.user_name + "/remove/" + encodeURIComponent(imgUrl);  
         console.log("-- Request to remove image: " + $scope.string_API);
         $http.get($scope.string_API)
             .then(function(response) {
                 console.log("Your Image: " + encodeURIComponent(imgUrl) + " was removed.");
+                $scope.string_API = "/getMyPins/" +  $scope.user_name;  
+                console.log("Requesting all my Pins:  " + $scope.string_API);
+                $http.get($scope.string_API)
+                    .then(function(response) {
+                console.log("Response received: "+ response.data); 
+                if(response.data != null){
+                    $scope.myPins=response.data.user_pins;
+                    console.log(" My Pins List: " + JSON.stringify(response.data.user_pins));
+                }
+                 });    
             });
     };
     
