@@ -9,7 +9,7 @@ myApp.controller('mainController', function($scope, $http, $window) {
                 $scope.userName = response.data;
                 console.log(response.data + ' Get My Username ' + $scope.userName);
                 
-                if(response.data != ""){
+                if($scope.userName != ""){
                     $scope.string_API = "/getMyPins/" +  $scope.userName;  
                     console.log("Requesting all my Pins:  " + $scope.string_API);
                     $http.get($scope.string_API)
