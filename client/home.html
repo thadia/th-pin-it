@@ -46,7 +46,7 @@
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#home" ng-click="getMyPins(userName)">My Pins</a></li>
             <li><a data-toggle="tab" href="#myInfo" ng-click="getMyInfo(userName)">Add Image</a></li>
-
+            <li><a data-toggle="tab" href="#otherPins" ng-click="getOtherPins(userName)">Pins</a></li>
 
         </ul>
 
@@ -104,6 +104,43 @@
                         
                         
                     </div>
+                    
+            <div id="otherPins" class="tab-pane fade">  <!--  <h3>otherPins</h3> -->
+                       
+                <div class="row">
+               
+                        <!-- [{{$index + 1}}] -->
+                        <!--     <img src="..." alt="...">    {{otherPins}}-->
+                        <div class="list_pins" ng-repeat="user in otherPins track by $index">
+                            <h4 class="h4-user"><i class="fa fa-user" aria-hidden="true"></i> {{user.user_name}}: </h4>
+                                    <div ng-repeat="pin in user.user_pins track by $index">
+                                         <div class="col-xs-6 col-sm-3"  >
+                        
+                                            <div class="thumbnail AutoResizeToLargestElement">
+                                                <div class="caption">
+                                                <!--  <h3>Thumbnail label</h3>
+                                                            <p>...</p> -->
+                                                   <a href="#" class="btn btn-default pin-this" id="delete_img_button" role="button" ng-click="pinThisImage(userName,pin)"><i class="fa fa-thumb-tack fa-1x" aria-hidden="true"></i></a>
+                                                    
+                                                   <div class="fix_img" style="background-image:url('{{pin}}')"> </div>
+                                                 <!--  <img src={{pin}} alt="..." class="thumbnail img-responsive fix_img"> -->
+                                                 </div>
+                                            </div>
+                                        </div>
+                                        
+                                      <div class="clearfix visible-xs-block"></div>
+        
+                                    </div>
+                                
+                           
+                        </div>
+                
+                
+                    </div>
+                        
+                        
+                    </div>
+                    
         </div>
     </div>
 </div>

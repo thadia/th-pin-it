@@ -6,7 +6,14 @@ curl -get http://localhost:8080/img/post/u1/https%3A%2F%2Flh4.ggpht.com%2FmJDgTD
 
 
 
-
+ User.aggregate({ $match:
+    {user_name: {$ne: req.params.userName }}},
+    {$group : {_id : "$user_state", availableusers: { $push: "$$ROOT" }}},
+     function(err, latest_data) {
+      if (err) return console.error(err);
+    
+    res.json(latest_data);
+  });
 
 
 
