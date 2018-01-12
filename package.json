@@ -23,7 +23,8 @@
     "passport": "0.3.2",
     "passport-twitter": "1.0.4",
     "path": "0.12.7",
-    "request": "2.74.0"
+    "request": "2.74.0",
+    "config":"1.29.1"
   },
   "engines": {
     "node": "0.10.x",
