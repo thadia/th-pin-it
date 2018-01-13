@@ -28,9 +28,7 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="addImg"><a href="#" ng-click="addImage()"><i class="fa fa-plus-circle fa-1x" aria-hidden="true"></i> Add Image</a></li>
-                </ul>
+                
                  <ul class="nav navbar-nav navbar-right">
                   <li class="logOut"><a href="#"ng-click="logout()"><i class="fa fa-times-circle fa-1x" aria-hidden="true"></i> Log Out</a></li>
                 </ul>
@@ -45,7 +43,7 @@
     <div class="container-fluid">
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#home" ng-click="getMyPins(userName)">My Pins</a></li>
-            <li><a data-toggle="tab" href="#myInfo" ng-click="getMyInfo(userName)">Add Image</a></li>
+            <li><a data-toggle="tab" href="#addImg" ng-click="getMyInfo(userName)">Add Image</a></li>
             <li><a data-toggle="tab" href="#otherPins" ng-click="getOtherPins(userName)">Pins</a></li>
 
         </ul>
@@ -81,7 +79,7 @@
                 
             </div>
            
-            <div id="myInfo" class="tab-pane fade">  <!--  <h3>MyInfo</h3> -->
+            <div id="addImg" class="tab-pane fade">  <!--  <h3>addImg</h3> -->
                        
                         <br/>
                        <!-- <div class="input-group">
